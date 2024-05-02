@@ -1,12 +1,16 @@
-FROM node:14-alpine
+FROM node:14
 
+# Create app directory
 WORKDIR /usr/src/app
 
+# Install app dependencies
 COPY package*.json ./
 RUN npm install
+
+# Bundle app source
 COPY . .
 
-EXPOSE 5000
+ENV AZURE_STORAGE_CONNECTION_STRING=
+
+EXPOSE 3000
 CMD [ "node", "server.js" ]
-ADD index.html /usr/share/nginx/html/
-ADD azure-blob.js /usr/share/nginx/html/

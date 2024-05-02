@@ -8,8 +8,16 @@
 <body style="background-color:forestgreen;">
 <h1>Kubernetes Demo v1</h1>
 <div id="blob-content">Loading Azure Blob content...</div>
-<script src="azure-blob.js"></script>
 
+<script>
+  fetch('/blob-content')
+    .then(response => response.text())
+    .then(data => document.getElementById('blob-content').innerText = data)
+    .catch(error => console.error('Error fetching blob content:', error));
+</script>
+
+</body>
+</html>
 
 </body>
 </html>
