@@ -13,7 +13,7 @@
   fetch('/blob-content')
     .then(response => response.text())
     .then(data => document.getElementById('blob-content').innerText = data)
-    .catch(error => console.error('Error fetching blob content:', error));
+    .catch(error => console.error('Connected, but no documents found', error));
 </script>
 
 </body>
