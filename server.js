@@ -37,7 +37,7 @@ app.get('/blob-content', async (req, res) => {
     res.send(blobContent);
   } catch (error) {
     console.error('Error fetching blob content:', error);
-    res.status(500).send('Error fetching blob content');
+    res.status(500).send('Connected, but no documents found');
   }
 });
 
