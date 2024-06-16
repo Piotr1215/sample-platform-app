@@ -28,6 +28,9 @@ lib-cov
 coverage
 *.lcov
 
+# mirrord
+.mirrord
+
 # nyc test coverage
 .nyc_output
 
