@@ -7,7 +7,13 @@ app.use(express.static('public'));
 
 app.get('/blob-content', async (req, res) => {
   try {
-    const blobServiceClient = BlobServiceClient.fromConnectionString(process.env.AZURE_STORAGE_CONNECTION_STRING);
+    let blobServiceClient;
+    try {
+        blobServiceClient = BlobServiceClient.fromConnectionString(process.env.AZURE_STORAGE_CONNECTION_STRING);
+    } catch (error) {
+        console.error("Error connecting to Azure Blob Storage:", error.message);
+        return res.status(500).send("Internal Server Error: Unable to connect to Azure Blob Storage");
+    }
     
     // Retrieve the first container
     let containerName = "";
