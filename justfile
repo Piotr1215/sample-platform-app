@@ -1,6 +1,11 @@
+default:
+  just --list
+
 # Run mirrord on deployment, this resolves to a single pod
 mirrord:
-  @mirrord exec --target-namespace devops-team --target deployment/foo-app-deployment nodemon server.js
+  @mirrord exec --target-namespace devops-team \
+   --target deployment/foo-app-deployment \
+   nodemon server.js
 
 # Run mirrord on a pod, this resolves to the first pod
 mirrord_pod:
@@ -10,7 +15,7 @@ mirrord_pod:
   echo "$pod"
   mirrord exec --target-namespace devops-team --target "$pod" nodemon server.js
 
-browser:
+browser: 
   browser-sync start --proxy "localhost:3000" --files "server.js" "public/**/*"
 
 start_server:

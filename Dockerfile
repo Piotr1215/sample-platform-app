@@ -1,4 +1,4 @@
-FROM node:14
+FROM node:20-slim  
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -11,6 +11,5 @@ RUN npm install
 COPY . .
 
 ENV AZURE_STORAGE_CONNECTION_STRING=
-
 EXPOSE 3000
 CMD [ "node", "server.js" ]
