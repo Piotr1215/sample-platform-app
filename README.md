@@ -15,4 +15,8 @@ docker run --pull=always -d -p 3000:3000 piotrzan/platform-demo:latest
 
 Then open your browser at `http://localhost:3000`.
 
+## Deployment
+
+The docker image is automatically pulled and build in Docker Hub on every push
+
 
