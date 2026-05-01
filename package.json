@@ -7,7 +7,7 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "@azure/storage-blob": "^12.17.0",
+    "@azure/storage-blob": "^12.31.0",
     "express": "^4.22.1"
   },
   "author": "",
